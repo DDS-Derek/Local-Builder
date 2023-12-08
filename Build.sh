@@ -45,3 +45,6 @@ ls -al
 bash Build.sh
 cd ${Work_dir}
 rm -rf ${Git_Dir}
+
+
+docker image rm tonistiigi/binfmt:latest
