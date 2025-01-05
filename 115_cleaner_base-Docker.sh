@@ -17,13 +17,11 @@ function WARN() {
 echo -e "${WARN} ${1}"
 }
 
-Build_Dir=115_cleaner
-Git_Repo="https://$(jq -r '.Github_Token' /etc/DDSRem/config.json)@github.com/DDS-Derek/xiaoya-alist-private.git"
+Git_Repo="https://$(jq -r '.Github_Token' /etc/DDSRem/config.json)@github.com/xiaoyaDev/115_cleaner.git"
 Git_Br=master
 Work_dir=$(pwd)
 Git_Dir=$(mktemp -d --tmpdir="${Work_dir}")
 
-INFO "Build_Dir=${Build_Dir}"
 INFO "Git_Repo=${Git_Repo}"
 INFO "Git_Br=${Git_Br}"
 INFO "Work_dir=${Work_dir}"
@@ -37,7 +35,7 @@ else
     git clone "${Git_Repo}" "${Git_Dir}"
 fi
 
-cd "${Git_Dir}/${Build_Dir}" || exit
+cd "${Git_Dir}" || exit
 pwd
 ls -al
 bash Build.sh
